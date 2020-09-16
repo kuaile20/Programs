@@ -25,10 +25,20 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.net.InetAddress;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
+import java.util.stream.Stream;
+import java.util.stream.Collectors;
+import java.io.File;
+import java.io.IOException; 
 
 public class WebWorker implements Runnable
 {
@@ -55,9 +65,9 @@ public class WebWorker implements Runnable
 		{
 			InputStream is = socket.getInputStream();
 			OutputStream os = socket.getOutputStream();
-			readHTTPRequest(is);
-			writeHTTPHeader(os, "text/html");
-			writeContent(os);
+			File reqFile = readHTTPRequest(is);
+			writeHTTPHeader(os, reqFile);
+			writeContent(os, reqFile);
 			os.flush();
 			socket.close();
 		}
@@ -72,9 +82,10 @@ public class WebWorker implements Runnable
 	/**
 	 * Read the HTTP request header.
 	 **/
-	private void readHTTPRequest(InputStream is)
+	private File readHTTPRequest(InputStream is)
 	{
 		String line;
+		File reqFile = null;
 		BufferedReader r = new BufferedReader(new InputStreamReader(is));
 		while (true)
 		{
@@ -84,6 +95,11 @@ public class WebWorker implements Runnable
 					Thread.sleep(1);
 				line = r.readLine();
 				System.err.println("Request line: (" + line + ")");
+				if (line.startsWith("GET"))
+				{
+					String fileName = line.substring(5, line.length() - 9);
+					reqFile = new File(fileName);
+				}
 				if (line.length() == 0)
 					break;
 			}
@@ -93,7 +109,8 @@ public class WebWorker implements Runnable
 				break;
 			}
 		}
-		return;
+		
+		return reqFile;
 	}
 
 	/**
@@ -101,24 +118,38 @@ public class WebWorker implements Runnable
 	 * 
 	 * @param os
 	 *          is the OutputStream object to write to
-	 * @param contentType
-	 *          is the string MIME content type (e.g. "text/html")
+	 * @param reqFile
+	 *          is the File
 	 **/
-	private void writeHTTPHeader(OutputStream os, String contentType) throws Exception
+	private void writeHTTPHeader(OutputStream os, File reqFile) throws Exception
 	{
 		Date d = new Date();
 		DateFormat df = DateFormat.getDateTimeInstance();
 		df.setTimeZone(TimeZone.getTimeZone("GMT"));
-		os.write("HTTP/1.1 200 OK\n".getBytes());
+		Path path = Paths.get(reqFile.getAbsolutePath());
+		String contentType = Files.probeContentType(path);
+		
+		if (contentType == null) {
+			os.write("HTTP/1.1 200 OK\n".getBytes());
+		} else if (reqFile.exists() && contentType.equals("text/html")) {
+			os.write("HTTP/1.1 200 OK\n".getBytes());
+		} else {
+			os.write("HTTP/1.1 404 NOT FOUND\n".getBytes());
+		}
+		
 		os.write("Date: ".getBytes());
 		os.write((df.format(d)).getBytes());
 		os.write("\n".getBytes());
-		os.write("Server: Jon's very own server\n".getBytes());
+		os.write("Server: Lu's server\n".getBytes());
 		// os.write("Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT\n".getBytes());
 		// os.write("Content-Length: 438\n".getBytes());
 		os.write("Connection: close\n".getBytes());
 		os.write("Content-Type: ".getBytes());
-		os.write(contentType.getBytes());
+		if (contentType != null) {
+			os.write(contentType.getBytes());
+		} else {
+			os.write("text/html".getBytes());
+		}
 		os.write("\n\n".getBytes()); // HTTP header ends with 2 newlines
 		return;
 	}
@@ -130,11 +161,53 @@ public class WebWorker implements Runnable
 	 * @param os
 	 *          is the OutputStream object to write to
 	 **/
-	private void writeContent(OutputStream os) throws Exception
+	private void writeContent(OutputStream os, File reqFile) throws Exception
 	{
-		os.write("<html><head></head><body>\n".getBytes());
-		os.write("<h3>My web server works!</h3>\n".getBytes());
-		os.write("</body></html>\n".getBytes());
+		Path path = Paths.get(reqFile.getAbsolutePath());
+		String contentType = Files.probeContentType(path);
+//		if (contentType == null)
+//		{
+//			os.write("<html><head></head><body>\n".getBytes());
+//			os.write("<h3>My web server works!!!!!!!</h3>\n".getBytes());
+//			os.write("</body></html>\n".getBytes());
+//			return;
+//		}
+	
+		if (reqFile.exists() && contentType.equals("text/html")) {
+			System.out.println("write file...");
+			writeFile(os, reqFile);
+		} else {
+			os.write("404 Not Found\n".getBytes());
+		}
+//		if (reqFile != null)
+//		{
+//			os.write("<html><head></head><body>\n".getBytes());
+//			os.write(new String("<h1>localfile:" + reqFile.getAbsolutePath() + "</h1>").getBytes());
+//			os.write("<h3>My web server works!!!!!!!</h3>\n".getBytes());
+//			os.write("</body></html>\n".getBytes());
+//		}
+
+	}
+	
+	private void writeFile(OutputStream os, File reqFile)
+	{
+		try {
+			Path path = Paths.get(reqFile.getAbsolutePath());
+			String content = new String (Files.readAllBytes(path));
+//			Stream <String> lines = Files.lines(path);
+			String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+			String name = InetAddress.getLocalHost().getHostName();
+			String replaced = content.replaceAll("<cs371date>", date);
+			replaced = replaced.replaceAll("<cs371server>", name);
+			os.write(replaced.getBytes());
+//			List <String> replaced = lines.map(line -> line.replaceAll("<cs371date>", date)).collect(Collectors.toList());
+//			replaced = lines.map(line -> line.replaceAll("<cs371server>", name)).collect(Collectors.toList());
+//			os.write(replaced.toString().getBytes());
+//			lines.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 } // end class
