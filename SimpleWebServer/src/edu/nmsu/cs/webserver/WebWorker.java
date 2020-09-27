@@ -1,5 +1,7 @@
 package edu.nmsu.cs.webserver;
 
+import java.awt.image.BufferedImage;
+
 /**
  * Web worker: an object of this class executes in its own new thread to receive and respond to a
  * single HTTP request. After the constructor the object executes on its "run" method, and leaves
@@ -22,6 +24,8 @@ package edu.nmsu.cs.webserver;
  **/
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -32,10 +36,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.stream.Stream;
+
+import javax.imageio.ImageIO;
+
 import java.util.stream.Collectors;
 import java.io.File;
 import java.io.IOException; 
@@ -67,7 +75,15 @@ public class WebWorker implements Runnable
 			OutputStream os = socket.getOutputStream();
 			File reqFile = readHTTPRequest(is);
 			writeHTTPHeader(os, reqFile);
-			writeContent(os, reqFile);
+			Path path = Paths.get(reqFile.getAbsolutePath());
+			String contentType = Files.probeContentType(path);
+			if (contentType.equals("text/html")) {
+				writeContent(os, reqFile);
+			} else if (contentType.equals("image/gif") || contentType.equals("image/jpeg") || contentType.equals("image/png")) {
+				writePicture(os, reqFile);
+			} else {
+				os.write("404 Not Found\n".getBytes());
+			}
 			os.flush();
 			socket.close();
 		}
@@ -174,7 +190,7 @@ public class WebWorker implements Runnable
 //		}
 	
 		if (reqFile.exists() && contentType.equals("text/html")) {
-			System.out.println("write file...");
+//			System.out.println("write file...");
 			writeFile(os, reqFile);
 		} else {
 			os.write("404 Not Found\n".getBytes());
@@ -210,4 +226,21 @@ public class WebWorker implements Runnable
 		}
 	}
 
+	private void writePicture(OutputStream os, File reqFile) throws Exception
+	{
+		Path path = Paths.get(reqFile.getAbsolutePath());
+		String contentType = Files.probeContentType(path);
+	
+		if (reqFile.exists() && contentType.equals("image/gif") || contentType.equals("image/jpeg") || contentType.equals("image/png")) {
+			BufferedImage sourceimage = ImageIO.read(reqFile);
+			ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+			ImageIO.write(sourceimage, "jpeg", bytes);
+			bytes.flush();
+			byte[] bytesArray = bytes.toByteArray();
+			bytes.close();
+			os.write(bytesArray);
+		} else {
+			os.write("404 Not Found\n".getBytes());
+		}
+	}
 } // end class
