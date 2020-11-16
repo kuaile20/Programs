@@ -37,26 +37,8 @@ public class RacingScore2
 	public int overallScore()
 	{
 		int s, s1, s2;
-		if (score1 < score2 && score1 < score3)
-		{
-			s1 = score2;
-			s2 = score3;
-		}
-		else if (score2 < score1 && score2 < score3)
-		{
-			s1 = score1;
-			s2 = score2;
-		}
-		else if (score3 < score1 && score3 < score2)
-		{
-			s1 = score1;
-			s2 = score2;
-		}
-		else
-		{
-			s1 = 99;
-			s2 = 99;
-		}
+		s1 = score1;
+		s2 = score2;
 		s = s1 + s2;
 		return s;
 	}
@@ -64,27 +46,9 @@ public class RacingScore2
 	public static void main(String args[])
 	{
 		int s1, s2, s3;
-		if (args == null || args.length != 3)
-		{
-			System.err.println("Error: must supply three arguments!");
-			return;
-		}
-		try
-		{
-			s1 = Integer.parseInt(args[0]);
-			s2 = Integer.parseInt(args[1]);
-			s3 = Integer.parseInt(args[2]);
-		}
-		catch (Exception e)
-		{
-			System.err.println("Error: arguments must be integers!");
-			return;
-		}
-		if (s1 < 0 || s1 > 50 || s2 < 0 || s2 > 50 || s3 < 0 || s3 > 50)
-		{
-			System.err.println("Error: scores must be between 0 and 50!");
-			return;
-		}
+		s1 = Integer.parseInt(args[0]);
+		s2 = Integer.parseInt(args[1]);
+		s3 = Integer.parseInt(args[2]);
 		RacingScore2 score = new RacingScore2();
 		score.recordScores(s1, s2, s3);
 		System.out.println("Overall score: " + score.overallScore());

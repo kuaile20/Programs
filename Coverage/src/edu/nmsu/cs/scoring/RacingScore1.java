@@ -38,12 +38,8 @@ public class RacingScore1
 	public int overallScore()
 	{
 		int s;
-		if (score1 < score2)
-			s = score2;
-		else
-			s = score1;
-		if (s > score3)
-			s = score3;
+		s = score2;
+
 		s = (score1 + score2 + score3) - s;
 		return s;
 	}
@@ -51,22 +47,9 @@ public class RacingScore1
 	public static void main(String args[])
 	{
 		int s1, s2, s3;
-		if (args.length != 3)
-		{
-			System.err.println("Error: must supply three arguments!");
-			return;
-		}
-		try
-		{
-			s1 = Integer.parseInt(args[0]);
-			s2 = Integer.parseInt(args[1]);
-			s3 = Integer.parseInt(args[2]);
-		}
-		catch (Exception e)
-		{
-			System.err.println("Error: arguments must be integers!");
-			return;
-		}
+		s1 = Integer.parseInt(args[0]);
+		s2 = Integer.parseInt(args[1]);
+		s3 = Integer.parseInt(args[2]);
 		RacingScore1 score = new RacingScore1();
 		score.recordScores(s1, s2, s3);
 		System.out.println("Overall score: " + score.overallScore());
