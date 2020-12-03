@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="2" hostname="Lus-MacBook-Pro.local" name="edu.nmsu.cs.circles.Circle2Test" skipped="0" tests="2" time="0.024" timestamp="2020-12-02T17:45:35">
+  <properties>
+    <property name="sun.boot.library.path.ivy.instance" value="/usr/local/Cellar/openjdk/14.0.1/libexec/openjdk.jdk/Contents/Home/lib" />
+    <property name="java.specification.version" value="14" />
+    <property name="java.specification.version.ivy.instance" value="14" />
+    <property name="sun.cpu.endian.ivy.instance" value="little" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="ivy.home" value="/Users/ll2020/.ivy2" />
+    <property name="java.vendor.url" value="https://openjdk.java.net/" />
+    <property name="java.version.ivy.instance" value="14.0.1" />
+    <property name="ivy.default.conf.dir.ivy.instance" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="ivy.conf.dir" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/14.0.1/libexec/openjdk.jdk/Contents/Home/lib" />
+    <property name="sun.java.command" value="org.apache.tools.ant.launch.Launcher -cp  -lib /usr/local/share/ant test" />
+    <property name="os.version.ivy.instance" value="10.16" />
+    <property name="ivy.retrieve.pattern.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles/lib/[artifact]-[revision](-[classifier]).[ext]" />
+    <property name="sun.jnu.encoding.ivy.instance" value="UTF-8" />
+    <property name="user.dir.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles" />
+    <property name="ivy.revision" value="working@Lus-MacBook-Pro.local" />
+    <property name="jdk.debug" value="release" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.vm.version.ivy.instance" value="14.0.1+14" />
+    <property name="file.separator.ivy.instance" value="/" />
+    <property name="java.version.date" value="2020-04-14" />
+    <property name="java.home" value="/usr/local/Cellar/openjdk/14.0.1/libexec/openjdk.jdk/Contents/Home" />
+    <property name="basedir" value="/Users/ll2020/CS371/Programs/Circles" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="user.timezone.ivy.instance" value="America/Los_Angeles" />
+    <property name="ant.file.Circles" value="/Users/ll2020/CS371/Programs/Circles/build.xml" />
+    <property name="ivy.resolve.default.type.filter.ivy.instance" value="*" />
+    <property name="ivy.default.ivy.user.dir" value="/Users/ll2020/.ivy2" />
+    <property name="ivy.basedir.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles" />
+    <property name="ivy.lib.dir.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles/lib" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="ivy.cache.dir" value="/Users/ll2020/.ivy2/cache" />
+    <property name="java.runtime.version" value="14.0.1+14" />
+    <property name="java.runtime.name.ivy.instance" value="OpenJDK Runtime Environment" />
+    <property name="socksNonProxyHosts.ivy.instance" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="sun.io.unicode.encoding.ivy.instance" value="UnicodeBig" />
+    <property name="basedir.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="ivy.dep.file" value="ivy.xml" />
+    <property name="os.name.ivy.instance" value="Mac OS X" />
+    <property name="user.language.ivy.instance" value="en" />
+    <property name="ivy.settings.file" value="ivysettings.xml" />
+    <property name="java.vm.specification.version.ivy.instance" value="14" />
+    <property name="ivy.local.default.ivy.pattern" value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" />
+    <property name="java.vendor.url.ivy.instance" value="https://openjdk.java.net/" />
+    <property name="line.separator.ivy.instance" value="&#xa;" />
+    <property name="java.io.tmpdir" value="/var/folders/xc/lg1xfmtd3dd6j9_v62pqq6w80000gn/T/" />
+    <property name="java.version" value="14.0.1" />
+    <property name="ivy.resolved.file" value="/Users/ll2020/CS371/Programs/Circles/ivy.xml" />
+    <property name="ivy.settings.dir.ivy.instance" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="java.vm.specification.name.ivy.instance" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="file.encoding.ivy.instance" value="UTF-8" />
+    <property name="lib.dir" value="/Users/ll2020/CS371/Programs/Circles/lib" />
+    <property name="ivy.deliver.ivy.pattern" value="/Users/ll2020/CS371/Programs/Circles/distrib/[type]s/[artifact]-[revision](-[classifier]).[ext]" />
+    <property name="ivy.status" value="integration" />
+    <property name="java.library.path" value="/Users/ll2020/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:." />
+    <property name="java.vendor" value="N/A" />
+    <property name="sun.io.unicode.encoding" value="UnicodeBig" />
+    <property name="sun.arch.data.model.ivy.instance" value="64" />
+    <property name="ivy.default.ivy.user.dir.ivy.instance" value="/Users/ll2020/.ivy2" />
+    <property name="ant.file.type" value="file" />
+    <property name="ivy.parents.count" value="0" />
+    <property name="ivy.configurations.ivy.instance" value="*" />
+    <property name="java.io.tmpdir.ivy.instance" value="/var/folders/xc/lg1xfmtd3dd6j9_v62pqq6w80000gn/T/" />
+    <property name="java.version.date.ivy.instance" value="2020-04-14" />
+    <property name="ivy.default.settings.dir.ivy.instance" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="ivy.shared.default.ivy.pattern" value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" />
+    <property name="ivy.shared.default.root" value="/Users/ll2020/.ivy2/shared" />
+    <property name="ivy.shared.default.ivy.pattern.ivy.instance" value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" />
+    <property name="user.timezone" value="America/Los_Angeles" />
+    <property name="java.vm.specification.version" value="14" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="ivy.deps.changed" value="false" />
+    <property name="ivy.lib.dir" value="/Users/ll2020/CS371/Programs/Circles/lib" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="user.home" value="/Users/ll2020" />
+    <property name="sun.java.command.ivy.instance" value="org.apache.tools.ant.launch.Launcher -cp  -lib /usr/local/share/ant test" />
+    <property name="java.class.path.ivy.instance" value="/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-launcher.jar:/usr/local/share/ant:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-commons-net.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-xz.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-junit4.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-jai.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-resolver.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-jdepend.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-regexp.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-log4j.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-javamail.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-bcel.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-netrexx.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/bcel-6.4.1.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-swing.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-jsch.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-junitlauncher.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-junit.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-imageio.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-launcher.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-antlr.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-testutil.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-oro.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-jmf.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-xalan2.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-bsf.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-commons-logging.jar" />
+    <property name="ivy.publish.src.artifacts.pattern.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles/distrib/[type]s/[artifact]-[revision](-[classifier]).[ext]" />
+    <property name="ivy.checksums" value="sha1,md5" />
+    <property name="ivy.default.settings.dir" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="ivy.version" value="2.5.0" />
+    <property name="java.vm.info.ivy.instance" value="mixed mode, sharing" />
+    <property name="ivy.distrib.dir" value="/Users/ll2020/CS371/Programs/Circles/distrib" />
+    <property name="ant.library.dir.ivy.instance" value="/usr/local/Cellar/ant/1.10.8_2/libexec/lib" />
+    <property name="ivy.settings.url.ivy.instance" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml" />
+    <property name="ant.file" value="/Users/ll2020/CS371/Programs/Circles/build.xml" />
+    <property name="ivy.project.dir" value="/Users/ll2020/CS371/Programs/Circles" />
+    <property name="path.separator" value=":" />
+    <property name="os.version" value="10.16" />
+    <property name="ftp.nonProxyHosts.ivy.instance" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ivy.default.always.check.exact.revision.ivy.instance" value="false" />
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+    <property name="ivy.buildlist.ivyfilepath" value="ivy.xml" />
+    <property name="result.dir" value="/Users/ll2020/CS371/Programs/Circles/target" />
+    <property name="os.arch" value="x86_64" />
+    <property name="ivy.settings.dir.url.ivy.instance" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="ivy.shared.default.root.ivy.instance" value="/Users/ll2020/.ivy2/shared" />
+    <property name="ivy.deliver.ivy.pattern.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles/distrib/[type]s/[artifact]-[revision](-[classifier]).[ext]" />
+    <property name="java.vm.info" value="mixed mode, sharing" />
+    <property name="ivy.conf.dir.ivy.instance" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="java.class.version" value="58.0" />
+    <property name="user.country.ivy.instance" value="US" />
+    <property name="src.dir" value="/Users/ll2020/CS371/Programs/Circles/src" />
+    <property name="ant.project.default-target" value="compile" />
+    <property name="ant.library.dir" value="/usr/local/Cellar/ant/1.10.8_2/libexec/lib" />
+    <property name="ivy.cache.dir.ivy.instance" value="/Users/ll2020/.ivy2/cache" />
+    <property name="ant.project.name" value="Circles" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="jdk.debug.ivy.instance" value="release" />
+    <property name="java.specification.name.ivy.instance" value="Java Platform API Specification" />
+    <property name="ivy.settings.file.ivy.instance" value="ivysettings.xml" />
+    <property name="ivy.default.conf.dir" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="java.runtime.version.ivy.instance" value="14.0.1+14" />
+    <property name="java.vm.specification.vendor.ivy.instance" value="Oracle Corporation" />
+    <property name="ivy.local.default.artifact.pattern.ivy.instance" value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" />
+    <property name="ivy.build.artifacts.dir.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles/build/artifacts" />
+    <property name="ivy.settings.dir" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="sun.java.launcher.ivy.instance" value="SUN_STANDARD" />
+    <property name="ivy.local.default.root.ivy.instance" value="/Users/ll2020/.ivy2/local" />
+    <property name="ivy.local.default.artifact.pattern" value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" />
+    <property name="java.class.version.ivy.instance" value="58.0" />
+    <property name="ivy.resolve.default.type.filter" value="*" />
+    <property name="sun.management.compiler.ivy.instance" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="ivy.cache.ttl.default.ivy.instance" value="10s" />
+    <property name="file.separator" value="/" />
+    <property name="ivy.settings.dir.url" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings" />
+    <property name="java.vm.compressedOopsMode" value="Zero based" />
+    <property name="ivy.dep.file.ivy.instance" value="ivy.xml" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="ivy.organisation" value="org.apache" />
+    <property name="ivy.buildlist.ivyfilepath.ivy.instance" value="ivy.xml" />
+    <property name="java.vm.compressedOopsMode.ivy.instance" value="Zero based" />
+    <property name="user.name" value="ll2020" />
+    <property name="ivy.publish.src.artifacts.pattern" value="/Users/ll2020/CS371/Programs/Circles/distrib/[type]s/[artifact]-[revision](-[classifier]).[ext]" />
+    <property name="build.dir" value="/Users/ll2020/CS371/Programs/Circles/bin" />
+    <property name="ant.home" value="/usr/local/Cellar/ant/1.10.8_2/libexec" />
+    <property name="ivy.module" value="WebProject" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.8 compiled on May 10 2020" />
+    <property name="ivy.report.output.pattern" value="[organisation]-[module]-[conf].[ext]" />
+    <property name="ivy.log.modules.in.use" value="false" />
+    <property name="ivy.nb.targets.copied" value="0" />
+    <property name="ivy.conf.url.ivy.instance" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml" />
+    <property name="os.arch.ivy.instance" value="x86_64" />
+    <property name="java.library.path.ivy.instance" value="/Users/ll2020/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:." />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ivy.shared.default.artifact.pattern.ivy.instance" value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" />
+    <property name="user.home.ivy.instance" value="/Users/ll2020" />
+    <property name="java.vendor.url.bug.ivy.instance" value="https://bugreport.java.com/bugreport/" />
+    <property name="ivy.local.default.root" value="/Users/ll2020/.ivy2/local" />
+    <property name="java.class.path" value="/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-launcher.jar:/usr/local/share/ant:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-commons-net.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-xz.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-junit4.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-jai.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-resolver.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-jdepend.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-regexp.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-log4j.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-javamail.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-bcel.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-netrexx.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/bcel-6.4.1.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-swing.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-jsch.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-junitlauncher.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-junit.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-imageio.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-launcher.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-antlr.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-testutil.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-oro.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-jmf.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-xalan2.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-apache-bsf.jar:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant-commons-logging.jar" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.vendor.ivy.instance" value="N/A" />
+    <property name="ivy.project.dir.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles" />
+    <property name="ivy.status.ivy.instance" value="integration" />
+    <property name="user.country" value="US" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="ant.file.type.Circles" value="file" />
+    <property name="ivy.retrieve.pattern" value="/Users/ll2020/CS371/Programs/Circles/lib/[artifact]-[revision](-[classifier]).[ext]" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="user.language" value="en" />
+    <property name="ivy.checksums.ivy.instance" value="sha1,md5" />
+    <property name="ivy.home.ivy.instance" value="/Users/ll2020/.ivy2" />
+    <property name="user.name.ivy.instance" value="ll2020" />
+    <property name="ant.java.version" value="14" />
+    <property name="ivy.basedir" value="/Users/ll2020/CS371/Programs/Circles" />
+    <property name="http.nonProxyHosts.ivy.instance" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="java.vm.vendor.ivy.instance" value="Oracle Corporation" />
+    <property name="ant.home.ivy.instance" value="/usr/local/Cellar/ant/1.10.8_2/libexec" />
+    <property name="ivy.cache.ttl.default" value="10s" />
+    <property name="java.vm.name.ivy.instance" value="OpenJDK 64-Bit Server VM" />
+    <property name="java.specification.vendor.ivy.instance" value="Oracle Corporation" />
+    <property name="ivy.resolver.default.check.modified.ivy.instance" value="false" />
+    <property name="ivy.configurations" value="*" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ivy.default.always.check.exact.revision" value="false" />
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+    <property name="ivy.distrib.dir.ivy.instance" value="/Users/ll2020/CS371/Programs/Circles/distrib" />
+    <property name="ant.project.invoked-targets" value="test" />
+    <property name="ant.core.lib" value="/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ant.jar" />
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+    <property name="user.dir" value="/Users/ll2020/CS371/Programs/Circles" />
+    <property name="path.separator.ivy.instance" value=":" />
+    <property name="ivy.local.default.ivy.pattern.ivy.instance" value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" />
+    <property name="ivy.report.output.pattern.ivy.instance" value="[organisation]-[module]-[conf].[ext]" />
+    <property name="ivy.log.modules.in.use.ivy.instance" value="false" />
+    <property name="ivy.targets.copied" value="false" />
+    <property name="java.vm.version" value="14.0.1+14" />
+    <property name="ivy.resolver.default.check.modified" value="false" />
+    <property name="java.home.ivy.instance" value="/usr/local/Cellar/openjdk/14.0.1/libexec/openjdk.jdk/Contents/Home" />
+    <property name="ivy.settings.url" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml" />
+    <property name="ivy.shared.default.artifact.pattern" value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" />
+    <property name="ivy.resolved.configurations" value="compile, runtime, test" />
+    <property name="ivy.build.artifacts.dir" value="/Users/ll2020/CS371/Programs/Circles/build/artifacts" />
+    <property name="ivy.conf.url" value="jar:file:/usr/local/Cellar/ant/1.10.8_2/libexec/lib/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml" />
+  </properties>
+  <testcase classname="edu.nmsu.cs.circles.Circle2Test" name="simpleMove" time="0.009">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at edu.nmsu.cs.circles.Circle2Test.simpleMove(Circle2Test.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+</failure>
+  </testcase>
+  <testcase classname="edu.nmsu.cs.circles.Circle2Test" name="simpleMoveNeg" time="0.002">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at edu.nmsu.cs.circles.Circle2Test.simpleMoveNeg(Circle2Test.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+</failure>
+  </testcase>
+  <system-out><![CDATA[
+Test starting...
+Running test simpleMove.
+
+Test finished.
+
+Test starting...
+Running test simpleMoveNeg.
+
+Test finished.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

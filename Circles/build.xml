@@ -1,0 +1,70 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="Circles" default="compile" basedir=".">
+	
+	<property name="lib.dir" location="lib/"/>
+	<property name="src.dir" location="src/"/>
+	<property name="build.dir" location="bin/"/>
+	<property name="result.dir" location="./target"/>
+	
+    <target name="resolve" description="retrieve dependencies with ivy">
+        <echo message="Getting dependencies..." />
+        <ivy:retrieve />
+
+        <ivy:cachepath pathid="build.dir" conf="compile" />
+        <ivy:cachepath pathid="build.dir" conf="runtime" />
+        <ivy:cachepath pathid="test.path" conf="test" />
+
+    </target>
+	
+	<target name="init">
+	        <mkdir dir="${src.dir}" />
+	        <mkdir dir="${build.dir}" />
+	        <mkdir dir="${result.dir}" />
+	</target>
+	
+	<target name="compile" depends="init, resolve" description="compile the source">
+		<mkdir dir="${build.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" debug="true">
+			<classpath><fileset dir="${lib.dir}" includes="**/*.jar"/>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="checkRun">
+		<uptodate property="run.notneeded" targetfile="${result.exec.file}">
+			<srcfiles dir="${src.dir}" includes="**/*.java build.xml"></srcfiles>
+		</uptodate>
+	</target>
+	
+	<target name="Circle1Test" depends="clean,resolve,compile,checkRun" unless="run.notneeded">
+		<junit printsummary="yes" haltonfailure="no">
+			<classpath refid="test.path"></classpath>
+			<classpath location="${build.dir}"></classpath>
+			<classpath location="lib/junit-4.13.1.jar" />
+			<classpath location="lib/hamcrest-core-1.3.jar"></classpath>
+			<test name="edu.nmsu.cs.circles.Circle1Test" haltonfailure="no" todir="${result.dir}" outfile="result">
+				<formatter type="plain"/>
+				<formatter type="xml"/>
+			</test>
+		</junit>
+	</target>
+	
+	<target name="Circle2Test" depends="clean,resolve,compile,checkRun" unless="run.notneeded">
+		<junit printsummary="yes" haltonfailure="no">
+			<classpath refid="test.path"></classpath>
+			<classpath location="${build.dir}"></classpath>
+			<classpath location="lib/junit-4.13.1.jar" />
+			<classpath location="lib/hamcrest-core-1.3.jar"></classpath>
+			<test name="edu.nmsu.cs.circles.Circle2Test" haltonfailure="no" todir="${result.dir}" outfile="result">
+				<formatter type="plain"/>
+				<formatter type="xml"/>
+			</test>
+		</junit>
+	</target>
+	
+	<target name="test" depends="Circle1Test, Circle2Test" unless="run.notneeded"></target>
+	
+	<target name="clean" description="clean files">
+		<delete dir="${build.dir}"/>
+	</target>
+	
+</project>
